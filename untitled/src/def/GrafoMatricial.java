@@ -1,5 +1,8 @@
 package def;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -100,6 +103,28 @@ public class GrafoMatricial implements Grafo {
         return getDistancia(i1, i2);
     }
     
+    public static GrafoMatricial lerDeArquivo(String nomeArquivo) throws IOException {
+    BufferedReader leitor = new BufferedReader(new FileReader(nomeArquivo));
+    String[] primeiraLinha = leitor.readLine().split(" ");
+    int V = Integer.parseInt(primeiraLinha[0]);
+    int E = Integer.parseInt(primeiraLinha[1]);
 
+    GrafoMatricial g = new GrafoMatricial(V);
+    for (int i = 0; i < V; i++) {
+        String vertice = leitor.readLine();
+        g.adicionarVertice(vertice);
+    }
+
+    for (int i = 0; i < E; i++) {
+        String[] aresta = leitor.readLine().split(" ");
+        String v1 = aresta[0];
+        String v2 = aresta[1];
+        int distancia = Integer.parseInt(aresta[2]);
+        g.adicionarAresta(v1, v2, distancia);
+    }
+
+    leitor.close();
+    return g;
+}
 
 }
