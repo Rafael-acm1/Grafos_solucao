@@ -53,6 +53,7 @@ public class GrafoMatricial implements Grafo {
             System.out.println("");
         }
     }*/
+    
     public void imprimir() {
         for (int i = 0; i < numeroVertices; i++) {
             for (int j = 0; j < numeroVertices; j++) {
