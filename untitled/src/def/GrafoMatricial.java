@@ -94,7 +94,12 @@ public class GrafoMatricial implements Grafo {
         return this.distancias[v1][v2];
     }
 
-
+    public double getDistancia(String v1, String v2) {
+        int i1 = getIndiceVertice(v1);
+        int i2 = getIndiceVertice(v2);
+        return getDistancia(i1, i2);
+    }
+    
 
 
 }

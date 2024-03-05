@@ -14,6 +14,6 @@ public interface Grafo {
     public void setNumeroVertices(int numeroVertices);
     public String getNomeVertice(int v);
     public double getDistancia(int v1, int v2);
-
+    public double getDistancia(String v1, String v2);
 
 }

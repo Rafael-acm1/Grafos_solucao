@@ -95,8 +95,15 @@ public class Main {
         CaminhoHamiltoniano ch = new CaminhoHamiltoniano(g);
         List<String> caminho = ch.resolver();
 
-        System.out.println("O Melhor caminho é:");
         System.out.println("");
-        System.out.println(caminho);
-}
+        System.out.println("Sendo A1 a cidade inicial, as encanações devem seguir o seguinte caminho:");
+        System.out.println("");
+
+        for (int i = 0; i < caminho.size() - 1; i++) {
+            String sitioAtual = caminho.get(i);
+            String proximoSitio = caminho.get(i + 1);
+            double distancia = g.getDistancia(sitioAtual, proximoSitio);
+            System.out.println(sitioAtual + " -> " + proximoSitio + " : " + distancia + " km");
+        }
+    }
 }
