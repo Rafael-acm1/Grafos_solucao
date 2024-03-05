@@ -11,7 +11,7 @@ public class Main {
         List<String> caminho = ch.resolver();
 
         System.out.println("");
-        System.out.println("Sendo A1 a cidade inicial, as encanações devem seguir o seguinte caminho:");
+        System.out.println("Sendo A1 a cidade inicial, as encanações devem seguir o seguinte caminho para abastecer todos os sítios de maneira otimizada:");
         System.out.println("");
 
         for (int i = 0; i < caminho.size() - 1; i++) {
